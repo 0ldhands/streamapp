@@ -1,34 +1,18 @@
+import Home from "./pages/Home.jsx";
 import Streamer from "./pages/Streamer.jsx";
 import Viewer from "./pages/Viewer.jsx";
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
 
 function App() {
 
-  const path = window.location.pathname;
-
-  if (path === "/stream") {
-    return <Streamer />;
-  }
-
-  if (path === "/watch") {
-    return <Viewer />;
-  }
-
   return (
-
-    <div style={{ textAlign: "center" }}>
-
-      <h1>Video Streaming App</h1>
-
-      <p>
-        Open /stream for streamer
-      </p>
-
-      <p>
-        Open /watch for viewer
-      </p>
-
-    </div>
-
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/streamer" element={<Streamer/>}/>
+        <Route path="/viewer" element={<Viewer/>}/>
+      </Routes>
+    </Router>
   );
 
 }

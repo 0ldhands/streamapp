@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import socket from "../services/socket";
+import {Link} from "react-router-dom"
 
 const ROOM_ID = "my-live-room";
 
@@ -179,6 +180,13 @@ function Viewer() {
   return (
 
     <div style={styles.container}>
+
+      
+              <ul>
+                  <li><Link to="/">Home</Link></li>
+                  <li><Link to="/streamer">Stream</Link></li>
+                  <li><Link to="/viewer">Viewer</Link></li>
+              </ul>
 
       <h1>💻 Live Viewer</h1>
 
