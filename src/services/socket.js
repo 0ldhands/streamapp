@@ -1,8 +1,6 @@
 import { io } from "socket.io-client";
 
-const socketUrl =
-	import.meta.env.VITE_SOCKET_URL ||
-	`${window.location.protocol}//${window.location.hostname}:3030`;
+const socketUrl =import.meta.env.VITE_SOCKET_URL ;
 
 const socket = io(socketUrl);
 
